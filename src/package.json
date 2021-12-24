@@ -1,16 +1,18 @@
 {
   "dependencies": {
-    "discord.js": "^13.3.1"
+    "ascii-table": "^0.0.9",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "glob": "^7.2.0"
   },
-  "name": "src",
-  "version": "1.0.0",
+  "name": "NYXie",
+  "version": "0.0.1",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "author": "Thunder Emperor",
+  "license": "CC-BY-NC-SA 4.0",
+  "description": "A Lightweight NYX clone"
 }

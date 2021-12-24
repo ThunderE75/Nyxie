@@ -1,11 +1,12 @@
 const { Client }  = require("discord.js");
-const { type } = require("os");
 const client = new Client ({intents: 32767});
-require('dotenv').config();
+const { TOKEN } = require("./config.js");
 
-client.once("ready", () => {
-    console.log("Bot is Online now!");
-    client.user.setActivity("A Lightweight NYX Clone", {type: "LISTENING"});
-})
+require ("./Handlers/Events.js")(client);
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
+
+//FIXME: Error on line 5
+
+// require('dotenv').config();
+// client.login(process.env.TOKEN);
