@@ -1,12 +1,11 @@
-const { Client }  = require("discord.js");
+const { Client, Collection  }  = require("discord.js");
+// const { Collection } = require("mongoose");
 const client = new Client ({intents: 32767});
-const { TOKEN } = require("./config.js");
+require('dotenv').config();
+require("./Handlers/Events")(client);
+require("./Handlers/Commands")(client);
 
-require ("./Handlers/Events.js")(client);
+client.commands = new Collection();
 
-client.login(TOKEN);
 
-//FIXME: Error on line 5
-
-// require('dotenv').config();
-// client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);

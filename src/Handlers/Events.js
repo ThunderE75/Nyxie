@@ -5,9 +5,8 @@ const { Client } = require("discord.js");
 const PG = promisify(glob);
 const Ascii = require("ascii-table");
 
-module.export = async (client) => {
+module.exports = async (client) => {
     const Table = new Ascii("Events Loaded");
-
 
     (await PG(`${process.cwd()}/Events/*/*.js`)).map(async (file) => {
         const event = require (file);
@@ -17,15 +16,13 @@ module.export = async (client) => {
             await Table.addRow(`${event.name || "Missing" }`, `❌ Event Name Invalid or Missing: ${L[6]} + / + ${L[7]}`);
             return;
         }
-
         if (event.once) {
             client.once(event.name, (...args) =>  event.execute(...args, client));
         }
         else{
             client.on(event.name, (...args) =>  event.execute(...args, client))
         }
-
-        await Table.addRow(event.name, `✔ Successful`);
+        await Table.addRow(event.name, `✅ Successful`);
 
     });
 

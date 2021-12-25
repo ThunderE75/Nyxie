@@ -1,6 +1,6 @@
 /src/node_modules/
 /src/package-lock.json
 /.vscode/
-src/.env
 src/.eslintrc.json
-src/config.js
+src/.env
+src/config.json
